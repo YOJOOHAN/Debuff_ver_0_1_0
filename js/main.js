@@ -59,21 +59,16 @@ const preImages=[
         const textbox1=[
         ["パップの人形劇場へbようこそ！","あり"],
         ["本日の演目はb「駆け出し勇者のデバフ祭り！」b楽しんでいってね！","あり"],
-        ["(ドラッグ＆ドロップでb魔法を唱えることができるよ！)","あり"],
-        ["（キミも僕のショーをb楽しんでいってね！)","あり"],
-        [" ","なし"]
+        ["(ドラッグ＆ドロップでb魔法を唱えることができるよ！)","なし"],
       ];
         
         clickToNext.style.pointerEvents="none"
         textOrder(textbox1[i][0],textbox1[i][1])
         i++
-        if(i===3){face.src="img/face09.png"}
-        if(i===5){
-        
+        if(i===3){face.src="img/face09.png"        
         clickToNext.style.display="none"
-        setTimeout(()=>{face.src="img/face00.png";
-        text.textContent=" ";
-        clickToNext.removeEventListener('click',ClickEvent) },500)  
+        setTimeout(()=>{
+        clickToNext.removeEventListener('click',ClickEvent) },1500)  
         }
           
         }
@@ -246,7 +241,9 @@ const preImages=[
        kemoshota.src = images[poisonNum];
        poisonStatusNum.textContent=`${poisonNum}`;
       
-      if(poisonNum===1){textOrder("ふふふ…b毒の魔法はいかがかな？")}
+      if(poisonNum===1){
+        face.src="img/face00.png";
+        textOrder("ふふふ…b毒の魔法はいかがかな？")}
       if(poisonNum===2){textOrder("苦しそうだね。b降参しちゃってもいいんだよ？")}
       if(poisonNum===3){face.src="img/face07.png";
         textOrder("さっさと降参しちゃいなよ。bこのままだとb本当に死んじゃうよ？")}
